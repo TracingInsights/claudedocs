@@ -22,25 +22,26 @@ documents/
 ## How It Works
 
 - A GitHub Action runs every **3 hours** to check for new documents
-- The scraper visits the FIA decision documents page, discovers all events and their PDFs
-- New PDFs are downloaded and committed to the repository automatically
-- A `manifest.json` file tracks all downloaded documents to avoid duplicates
+- Uses `asyncio` + `aiohttp` for parallel AJAX discovery and PDF downloads (15 concurrent downloads)
+- All events within a season are discovered in parallel via AJAX
+- A `manifest.json` tracks all downloaded URLs to avoid duplicates
 
 ## Manual Usage
 
 ```bash
-pip install -r requirements.txt
+# Install dependencies
+uv sync
 
 # Scrape all available seasons
-python scraper.py
+uv run python scraper.py
 
 # Scrape a specific year
-python scraper.py --year 2025
+uv run python scraper.py --year 2025
 
 # Custom output directory
-python scraper.py --output-dir my-docs
+uv run python scraper.py --output-dir my-docs
 ```
 
 ## Manual Trigger
 
-You can manually trigger the scraper from the **Actions** tab → **Scrape FIA F1 Documents** → **Run workflow**.
+You can manually trigger the scraper from the **Actions** tab > **Scrape FIA F1 Documents** > **Run workflow**.
