@@ -461,8 +461,8 @@ async def scrape(
         # ------------------------------------------------------------------ #
         if include_timing:
             years_to_scan = list({s["year"] for s in seasons})
-            season_events_urls = [
-                f"{EVENTS_BASE_URL}/season-{y}" for y in years_to_scan
+            season_events_urls =[
+                f"{EVENTS_BASE_URL}/season-{y}/{y}-fia-formula-one-world-championship" for y in years_to_scan
             ]
             log.info("Fetching %d season events pages for timing discovery...", len(season_events_urls))
             season_events_htmls = await asyncio.gather(
