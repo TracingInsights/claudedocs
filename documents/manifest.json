@@ -67332,5 +67332,12 @@
     "path": "documents/2026/chinese-grand-prix/timetable-v3.pdf",
     "title": "Timetable V3",
     "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_competition_visa.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/competition-visa.pdf",
+    "source": "decision",
+    "title": "Competition Visa",
+    "year": 2026
   }
 }
