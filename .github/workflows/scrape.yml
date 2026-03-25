@@ -4,7 +4,20 @@ on:
   schedule:
     # Run every 3 hours
     - cron: "0 */3 * * *"
-  workflow_dispatch: # Allow manual triggers
+  workflow_dispatch:
+    inputs:
+      year:
+        description: "Only scrape a specific year (leave blank for all)"
+        required: false
+        default: ""
+      no_timing:
+        description: "Skip event timing-info documents"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
 
 permissions:
   contents: write
@@ -26,9 +39,21 @@ jobs:
       - name: Install dependencies
         run: uv sync --frozen
 
+      - name: Build scraper arguments
+        id: args
+        run: |
+          ARGS="--output-dir documents"
+          if [ -n "${{ inputs.year }}" ]; then
+            ARGS="$ARGS --year ${{ inputs.year }}"
+          fi
+          if [ "${{ inputs.no_timing }}" = "true" ]; then
+            ARGS="$ARGS --no-timing"
+          fi
+          echo "value=$ARGS" >> "$GITHUB_OUTPUT"
+
       - name: Run scraper
         id: scrape
-        run: uv run python scraper.py --output-dir documents
+        run: uv run python scraper.py ${{ steps.args.outputs.value }}
 
       - name: Commit and push new documents
         run: |
