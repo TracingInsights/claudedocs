@@ -67341,6 +67341,13 @@
     "title": "Timetable V3",
     "year": 2026
   },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_competition_notes_-_circuit_map_pit_lane_drawing_emergency_exits_map_battery_containment_area_and_red_zone.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/competition-notes-circuit-map-pit-lane-drawing-emergency-exits-map-battery-containment-area-and-red-zone.pdf",
+    "source": "decision",
+    "title": "Competition Notes - Circuit Map, Pit Lane Drawing, Emergency Exits Map, Battery Containment Area and Red Zone",
+    "year": 2026
+  },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_competition_notes_-_pirelli_preview.pdf": {
     "event": "Japanese Grand Prix",
     "path": "documents/2026/japanese-grand-prix/competition-notes-pirelli-preview.pdf",
@@ -67367,6 +67374,13 @@
     "path": "documents/2026/japanese-grand-prix/power-unit-information.pdf",
     "source": "decision",
     "title": "Power Unit Information",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_race_directors_competition_notes_.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/race-directors-competition-notes.pdf",
+    "source": "decision",
+    "title": "Race Director's Competition Notes",
     "year": 2026
   }
 }
