@@ -1,5 +1,8 @@
 # FIA F1 Document Scraper
 
+You can browse these FIA F1 Decision Documents at https://tracinginsights.com/ or f1tel.com. Also able to download these as pdf/images on website.
+
+
 Automatically scrapes Formula 1 decision documents (PDFs) from the [FIA website](https://www.fia.com/documents/championships/fia-formula-one-world-championship-14) and stores them in this repository.
 
 ## Directory Structure
