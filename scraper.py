@@ -1,8 +1,7 @@
 """FIA F1 Document Scraper
 
-Scrapes the FIA website for Formula 1:
+Scrapes the FIA website for Formula 1 decision documents:
   - Decision documents  → year/grand-prix/document-name.pdf
-  - Event timing info   → year/grand-prix/session/document-name.pdf
 
 Uses curl_cffi for browser-impersonated requests (bypasses TLS fingerprint checks)
 and asyncio for parallel discovery and PDF downloads.
@@ -13,7 +12,6 @@ import json
 import logging
 import os
 import re
-import sys
 from pathlib import Path
 from urllib.parse import urljoin
 
@@ -26,24 +24,13 @@ CHAMPIONSHIP_PATH = "/documents/championships/fia-formula-one-world-championship
 DOCUMENTS_URL = f"{BASE_URL}{CHAMPIONSHIP_PATH}"
 AJAX_URL = f"{BASE_URL}/decision-document-list/ajax/"
 
-EVENTS_PATH = "/events/fia-formula-one-world-championship"
-EVENTS_BASE_URL = f"{BASE_URL}{EVENTS_PATH}"
-
 MAX_AJAX_CONCURRENT = 10
 MAX_DOWNLOAD_CONCURRENT = 15
 
-# curl_cffi handles most headers automatically when impersonating; we just
-# add the XHR marker for AJAX calls.
 AJAX_EXTRA_HEADERS = {
     "Accept": "application/json, text/javascript, */*; q=0.01",
     "X-Requested-With": "XMLHttpRequest",
 }
-
-_SESSION_RE = re.compile(
-    r"(practice\s*\d+|qualifying|sprint[\s-]qualifying|sprint\s*race|sprint|race"
-    r"|pre[-\s]season\s*test(?:ing)?|shakedown)",
-    re.IGNORECASE,
-)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -229,163 +216,19 @@ async def fetch_event_docs(
 
 
 # ---------------------------------------------------------------------------
-# Event timing-info scraping
-# ---------------------------------------------------------------------------
-
-def _discover_timing_events_on_season_page(soup: BeautifulSoup, year: int) -> list[dict]:
-    pattern = re.compile(
-        rf"{re.escape(EVENTS_PATH)}/season-{year}/([^/\"'\s]+?)/?(?:[\"'\s]|$)"
-    )
-    seen: set[str] = set()
-    events = []
-
-    for a in soup.find_all("a", href=True):
-        m = pattern.search(a["href"])
-        if not m:
-            continue
-        slug = m.group(1).rstrip("/")
-        if slug in seen or not slug or "/" in slug:
-            continue
-        seen.add(slug)
-        base = f"{EVENTS_BASE_URL}/season-{year}/{slug}"
-        events.append({
-            "slug": slug,
-            "year": year,
-            "timing_url": f"{base}/eventtiming-information",
-        })
-
-    return events
-
-
-def _extract_sessions_from_timing_page(soup: BeautifulSoup) -> list[dict]:
-    # Strategy A: heading-delimited sections
-    sessions: list[dict] = []
-    heading_tags = soup.find_all(re.compile(r"^h[2-4]$"))
-    for heading in heading_tags:
-        label = heading.get_text(strip=True)
-        if not _SESSION_RE.search(label):
-            continue
-        docs: list[dict] = []
-        for sibling in heading.find_next_siblings():
-            if sibling.name and re.match(r"^h[1-4]$", sibling.name):
-                break
-            docs.extend(_extract_pdf_links(BeautifulSoup(str(sibling), "html.parser")))
-        if docs:
-            sessions.append({"session_slug": slugify(label), "documents": docs})
-
-    if sessions:
-        return sessions
-
-    # Strategy B: data-session / data-title attributes
-    for container in soup.find_all(
-        lambda tag: tag.has_attr("data-session") or tag.has_attr("data-title")
-    ):
-        label = container.get("data-session") or container.get("data-title", "")
-        if not _SESSION_RE.search(label):
-            continue
-        docs = _extract_pdf_links(container)
-        if docs:
-            sessions.append({"session_slug": slugify(label), "documents": docs})
-
-    if sessions:
-        return sessions
-
-    # Strategy C: tab panels
-    tab_labels: dict[str, str] = {}
-    for tab in soup.find_all(attrs={"role": "tab"}):
-        label = tab.get_text(strip=True)
-        panel_id = tab.get("aria-controls") or tab.get("href", "").lstrip("#")
-        if panel_id and label:
-            tab_labels[panel_id] = label
-
-    for panel in soup.find_all(attrs={"role": "tabpanel"}):
-        panel_id = panel.get("id", "")
-        label = tab_labels.get(panel_id, panel_id)
-        docs = _extract_pdf_links(panel)
-        if docs:
-            sessions.append({"session_slug": slugify(label) if label else "session", "documents": docs})
-
-    if not sessions:
-        for panel in soup.find_all(class_="tab-pane"):
-            panel_id = panel.get("id", "")
-            label = tab_labels.get(panel_id, panel_id)
-            docs = _extract_pdf_links(panel)
-            if docs:
-                sessions.append({
-                    "session_slug": slugify(label) if label else "session",
-                    "documents": docs,
-                })
-
-    if sessions:
-        return sessions
-
-    # Strategy D: fallback
-    all_docs = _extract_pdf_links(soup)
-    if all_docs:
-        sessions.append({"session_slug": "uncategorized", "documents": all_docs})
-
-    return sessions
-
-
-async def fetch_timing_event_docs(
-    session: AsyncSession,
-    sem: asyncio.Semaphore,
-    event: dict,
-) -> list[dict]:
-    async with sem:
-        html = await fetch_text(session, event["timing_url"])
-
-    if not html:
-        log.debug("No timing page (or 404) for %s", event["timing_url"])
-        return []
-
-    soup = BeautifulSoup(html, "html.parser")
-    sessions = _extract_sessions_from_timing_page(soup)
-
-    if not sessions:
-        log.debug("No timing documents found at %s", event["timing_url"])
-        return []
-
-    results = []
-    for sess in sessions:
-        for doc in sess["documents"]:
-            results.append({
-                **doc,
-                "year": event["year"],
-                "event_slug": event["slug"],
-                "session_slug": sess["session_slug"],
-                "source": "timing",
-            })
-    log.info(
-        "Timing %s/%s: %d sessions, %d docs",
-        event["year"],
-        event["slug"],
-        len(sessions),
-        len(results),
-    )
-    return results
-
-
-# ---------------------------------------------------------------------------
 # Main scrape orchestrator
 # ---------------------------------------------------------------------------
 
 async def scrape(
     output_dir: str = "documents",
     year_filter: int | None = None,
-    include_timing: bool = True,
 ) -> int:
     output = Path(output_dir)
     manifest_path = output / "manifest.json"
     manifest = load_manifest(manifest_path)
 
-    # AsyncSession with chrome120 impersonation — matches TLS fingerprint of a
-    # real browser, which is the usual cause of 403s on bot-protected sites.
     async with AsyncSession(impersonate="chrome120") as session:
 
-        # ------------------------------------------------------------------ #
-        # 1. Decision documents                                               #
-        # ------------------------------------------------------------------ #
         log.info("Fetching main documents page...")
         main_html = await fetch_text(session, DOCUMENTS_URL)
         if not main_html:
@@ -456,66 +299,6 @@ async def scrape(
                     {"year": year, "event": event["name"], "title": doc["title"], "source": "decision"},
                 ))
 
-        # ------------------------------------------------------------------ #
-        # 2. Event timing info                                                #
-        # ------------------------------------------------------------------ #
-        if include_timing:
-            years_to_scan = list({s["year"] for s in seasons})
-            season_events_urls =[
-                f"{EVENTS_BASE_URL}/season-{y}/{y}-fia-formula-one-world-championship" for y in years_to_scan
-            ]
-            log.info("Fetching %d season events pages for timing discovery...", len(season_events_urls))
-            season_events_htmls = await asyncio.gather(
-                *(fetch_text(session, url) for url in season_events_urls)
-            )
-
-            timing_events: list[dict] = []
-            for year, html in zip(years_to_scan, season_events_htmls):
-                if not html:
-                    log.warning("Failed to fetch events page for season %d", year)
-                    continue
-                soup = BeautifulSoup(html, "html.parser")
-                found = _discover_timing_events_on_season_page(soup, year)
-                log.info("Season %d: %d timing events discovered", year, len(found))
-                timing_events.extend(found)
-
-            log.info(
-                "Fetching timing info for %d events (concurrency=%d)...",
-                len(timing_events),
-                MAX_AJAX_CONCURRENT,
-            )
-            timing_results = await asyncio.gather(
-                *(fetch_timing_event_docs(session, ajax_sem, e) for e in timing_events)
-            )
-
-            for docs in timing_results:
-                for doc in docs:
-                    if doc["url"] in manifest:
-                        continue
-                    dest = _unique_dest(
-                        output
-                        / str(doc["year"])
-                        / doc["event_slug"]
-                        / doc["session_slug"]
-                        / doc["filename"],
-                        assigned_paths,
-                    )
-                    assigned_paths.add(dest)
-                    download_queue.append((
-                        doc["url"],
-                        dest,
-                        {
-                            "year": doc["year"],
-                            "event": doc["event_slug"],
-                            "session": doc["session_slug"],
-                            "title": doc["title"],
-                            "source": "timing",
-                        },
-                    ))
-
-        # ------------------------------------------------------------------ #
-        # 3. Download everything                                              #
-        # ------------------------------------------------------------------ #
         log.info("Download queue: %d new documents", len(download_queue))
         if not download_queue:
             log.info("Nothing new to download.")
@@ -543,20 +326,24 @@ async def scrape(
 # ---------------------------------------------------------------------------
 
 def main() -> None:
-    import argparse
-    parser = argparse.ArgumentParser(description="FIA F1 Document Scraper")
-    parser.add_argument("--output-dir", default="documents")
-    parser.add_argument("--year", type=int, default=None)
-    parser.add_argument("--no-timing", action="store_true")
-    args = parser.parse_args()
+    import sys
 
-    new_count = asyncio.run(
-        scrape(
-            output_dir=args.output_dir,
-            year_filter=args.year,
-            include_timing=not args.no_timing,
-        )
-    )
+    output_dir = "documents"
+    year_filter = None
+
+    args = sys.argv[1:]
+    i = 0
+    while i < len(args):
+        if args[i] == "--output-dir" and i + 1 < len(args):
+            output_dir = args[i + 1]
+            i += 2
+        elif args[i] == "--year" and i + 1 < len(args):
+            year_filter = int(args[i + 1])
+            i += 2
+        else:
+            i += 1
+
+    new_count = asyncio.run(scrape(output_dir=output_dir, year_filter=year_filter))
 
     github_output = os.environ.get("GITHUB_OUTPUT")
     if github_output:
