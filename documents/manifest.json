@@ -67433,6 +67433,13 @@
     "title": "Competition Notes - Pirelli Preview",
     "year": 2026
   },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_competition_notes_-_pirelli_preview_v2.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/competition-notes-pirelli-preview-v2.pdf",
+    "source": "decision",
+    "title": "Competition Notes - Pirelli Preview V2",
+    "year": 2026
+  },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_competition_visa.pdf": {
     "event": "Japanese Grand Prix",
     "path": "documents/2026/japanese-grand-prix/competition-visa.pdf",
@@ -67445,6 +67452,34 @@
     "path": "documents/2026/japanese-grand-prix/competition-visa-v2.pdf",
     "source": "decision",
     "title": "Competition Visa V2",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_curfew.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/curfew.pdf",
+    "source": "decision",
+    "title": "Curfew",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_decision_-_car_23_-_alleged_incident_with_car_11.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/decision-car-23-alleged-incident-with-car-11.pdf",
+    "source": "decision",
+    "title": "Decision - Car 23 - Alleged incident with car 11",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_decision_-_car_30_-_alleged_incident_with_car_55.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/decision-car-30-alleged-incident-with-car-55.pdf",
+    "source": "decision",
+    "title": "Decision - Car 30 - Alleged incident with car 55",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_decision_-_car_44_-_alleged_incident_with_car_3.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/decision-car-44-alleged-incident-with-car-3.pdf",
+    "source": "decision",
+    "title": "Decision - Car 44 - Alleged incident with car 3",
     "year": 2026
   },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_entry_list.pdf": {
@@ -67461,6 +67496,34 @@
     "title": "Free Practice 1 Classification",
     "year": 2026
   },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_free_practice_2_classification.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/free-practice-2-classification.pdf",
+    "source": "decision",
+    "title": "Free Practice 2 Classification",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_free_practice_3_classification.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/free-practice-3-classification.pdf",
+    "source": "decision",
+    "title": "Free Practice 3 Classification",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_infringement_-_car_43_-_impeding_of_car_3.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/infringement-car-43-impeding-of-car-3.pdf",
+    "source": "decision",
+    "title": "Infringement - Car 43 - Impeding of Car 3",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_infringement_-_car_81_-_impeding_of_car_27.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/infringement-car-81-impeding-of-car-27.pdf",
+    "source": "decision",
+    "title": "Infringement - Car 81 - Impeding of Car 27",
+    "year": 2026
+  },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_infringement_-_free_practice_1_deleted_lap_times.pdf": {
     "event": "Japanese Grand Prix",
     "path": "documents/2026/japanese-grand-prix/infringement-free-practice-1-deleted-lap-times.pdf",
@@ -67468,11 +67531,60 @@
     "title": "Infringement - Free Practice 1 Deleted Lap Times",
     "year": 2026
   },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_infringement_-_free_practice_2_deleted_lap_times.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/infringement-free-practice-2-deleted-lap-times.pdf",
+    "source": "decision",
+    "title": "Infringement - Free Practice 2 Deleted Lap Times",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_infringement_-_free_practice_2_deleted_lap_times_yellow_flags.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/infringement-free-practice-2-deleted-lap-times-yellow-flags.pdf",
+    "source": "decision",
+    "title": "Infringement - Free Practice 2 Deleted Lap Times (Yellow Flags)",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_infringement_-_free_practice_3_deleted_lap_times.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/infringement-free-practice-3-deleted-lap-times.pdf",
+    "source": "decision",
+    "title": "Infringement - Free Practice 3 Deleted Lap Times",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_infringement_-_free_practice_3_deleted_lap_times_yellow_flags.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/infringement-free-practice-3-deleted-lap-times-yellow-flags.pdf",
+    "source": "decision",
+    "title": "Infringement - Free Practice 3 Deleted Lap Times (Yellow Flags)",
+    "year": 2026
+  },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_new_pu_elements_for_this_competition.pdf": {
     "event": "Japanese Grand Prix",
     "path": "documents/2026/japanese-grand-prix/new-pu-elements-for-this-competition.pdf",
     "source": "decision",
     "title": "New PU elements for this Competition",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_new_pu_elements_for_this_competition_0.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/new-pu-elements-for-this-competition.pdf",
+    "source": "decision",
+    "title": "New PU elements for this Competition",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_p1_and_p2_scrutineering.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/p1-and-p2-scrutineering.pdf",
+    "source": "decision",
+    "title": "P1 and P2 Scrutineering",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_post-qualifying_procedure.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/post-qualifying-procedure.pdf",
+    "source": "decision",
+    "title": "Post-Qualifying Procedure",
     "year": 2026
   },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_post-race_checks_on_car_16_2026_chinese_gp.pdf": {
@@ -67494,6 +67606,13 @@
     "path": "documents/2026/japanese-grand-prix/pu-elements-used-per-driver-up-to-now.pdf",
     "source": "decision",
     "title": "PU elements used per driver up to now",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_race_director_notes_-_sc2_-_sc1_times.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/race-director-notes-sc2-sc1-times.pdf",
+    "source": "decision",
+    "title": "Race Director Notes - SC2 - SC1 Times",
     "year": 2026
   },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_race_directors_competition_notes_.pdf": {
@@ -67531,6 +67650,13 @@
     "title": "Summons - Car 23 - Alleged incident with car 11",
     "year": 2026
   },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_summons_-_car_27_-_alleged_impeding_by_car_81.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/summons-car-27-alleged-impeding-by-car-81.pdf",
+    "source": "decision",
+    "title": "Summons - Car 27 - Alleged impeding by Car 81",
+    "year": 2026
+  },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_summons_-_car_30_-_alleged_incident_with_car_55.pdf": {
     "event": "Japanese Grand Prix",
     "path": "documents/2026/japanese-grand-prix/summons-car-30-alleged-incident-with-car-55.pdf",
@@ -67538,11 +67664,25 @@
     "title": "Summons - Car 30 - Alleged incident with car 55",
     "year": 2026
   },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_summons_-_car_3_-_alleged_impeding_by_car_43.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/summons-car-3-alleged-impeding-by-car-43.pdf",
+    "source": "decision",
+    "title": "Summons - Car 3 - Alleged impeding by Car 43",
+    "year": 2026
+  },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_summons_-_car_3_-_alleged_incident_with_car_44.pdf": {
     "event": "Japanese Grand Prix",
     "path": "documents/2026/japanese-grand-prix/summons-car-3-alleged-incident-with-car-44.pdf",
     "source": "decision",
     "title": "Summons - Car 3 - Alleged incident with car 44",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_summons_-_car_43_-_alleged_impeding_of_car_3.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/summons-car-43-alleged-impeding-of-car-3.pdf",
+    "source": "decision",
+    "title": "Summons - Car 43 - Alleged impeding of Car 3",
     "year": 2026
   },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_summons_-_car_44_-_alleged_incident_with_car_3.pdf": {
@@ -67557,6 +67697,20 @@
     "path": "documents/2026/japanese-grand-prix/summons-car-55-alleged-incident-with-car-30.pdf",
     "source": "decision",
     "title": "Summons - Car 55 - Alleged incident with car 30",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_summons_-_car_81_-_alleged_impeding_of_car_27.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/summons-car-81-alleged-impeding-of-car-27.pdf",
+    "source": "decision",
+    "title": "Summons - Car 81 - Alleged impeding of Car 27",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_timetable_v3.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/timetable-v3.pdf",
+    "source": "decision",
+    "title": "Timetable V3",
     "year": 2026
   }
 }
