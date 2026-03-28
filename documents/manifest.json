@@ -67482,6 +67482,13 @@
     "title": "Decision - Car 44 - Alleged incident with car 3",
     "year": 2026
   },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_decision_-_qualifying_sc2-sc1_times.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/decision-qualifying-sc2-sc1-times.pdf",
+    "source": "decision",
+    "title": "Decision - Qualifying SC2-SC1 Times",
+    "year": 2026
+  },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_entry_list.pdf": {
     "event": "Japanese Grand Prix",
     "path": "documents/2026/japanese-grand-prix/entry-list.pdf",
@@ -67559,6 +67566,13 @@
     "title": "Infringement - Free Practice 3 Deleted Lap Times (Yellow Flags)",
     "year": 2026
   },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_infringement_-_qualifying_deleted_lap_times.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/infringement-qualifying-deleted-lap-times.pdf",
+    "source": "decision",
+    "title": "Infringement - Qualifying Deleted Lap Times",
+    "year": 2026
+  },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_new_pu_elements_for_this_competition.pdf": {
     "event": "Japanese Grand Prix",
     "path": "documents/2026/japanese-grand-prix/new-pu-elements-for-this-competition.pdf",
@@ -67599,6 +67613,13 @@
     "path": "documents/2026/japanese-grand-prix/power-unit-information.pdf",
     "source": "decision",
     "title": "Power Unit Information",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_provisional_qualifying_classification.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/provisional-qualifying-classification.pdf",
+    "source": "decision",
+    "title": "Provisional Qualifying Classification",
     "year": 2026
   },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_pu_elements_used_per_driver_up_to_now.pdf": {

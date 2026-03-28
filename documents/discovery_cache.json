@@ -1,11 +1,29 @@
 {
-  "timestamp": 1774672533.7154086,
+  "timestamp": 1774690569.0710757,
   "events": [
     {
       "name": "Japanese Grand Prix",
       "id": null,
       "year": 2026,
       "inline_docs": [
+        {
+          "title": "Infringement - Qualifying Deleted Lap Times",
+          "url": "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_infringement_-_qualifying_deleted_lap_times.pdf",
+          "filename": "infringement-qualifying-deleted-lap-times.pdf",
+          "doc_number": 48
+        },
+        {
+          "title": "Decision - Qualifying SC2-SC1 Times",
+          "url": "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_decision_-_qualifying_sc2-sc1_times.pdf",
+          "filename": "decision-qualifying-sc2-sc1-times.pdf",
+          "doc_number": 47
+        },
+        {
+          "title": "Provisional Qualifying Classification",
+          "url": "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_provisional_qualifying_classification.pdf",
+          "filename": "provisional-qualifying-classification.pdf",
+          "doc_number": 45
+        },
         {
           "title": "Infringement - Car 81 - Impeding of Car 27",
           "url": "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_infringement_-_car_81_-_impeding_of_car_27.pdf",
@@ -266,6 +284,24 @@
         }
       ],
       "documents": [
+        {
+          "title": "Infringement - Qualifying Deleted Lap Times",
+          "url": "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_infringement_-_qualifying_deleted_lap_times.pdf",
+          "filename": "infringement-qualifying-deleted-lap-times.pdf",
+          "doc_number": 48
+        },
+        {
+          "title": "Decision - Qualifying SC2-SC1 Times",
+          "url": "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_decision_-_qualifying_sc2-sc1_times.pdf",
+          "filename": "decision-qualifying-sc2-sc1-times.pdf",
+          "doc_number": 47
+        },
+        {
+          "title": "Provisional Qualifying Classification",
+          "url": "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_provisional_qualifying_classification.pdf",
+          "filename": "provisional-qualifying-classification.pdf",
+          "doc_number": 45
+        },
         {
           "title": "Infringement - Car 81 - Impeding of Car 27",
           "url": "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_infringement_-_car_81_-_impeding_of_car_27.pdf",
