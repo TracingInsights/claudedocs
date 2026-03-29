@@ -67419,6 +67419,13 @@
     "title": "Car Presentation Submissions",
     "year": 2026
   },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_championship_points.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/championship-points.pdf",
+    "source": "decision",
+    "title": "Championship Points",
+    "year": 2026
+  },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_competition_notes_-_circuit_map_pit_lane_drawing_emergency_exits_map_battery_containment_area_and_red_zone.pdf": {
     "event": "Japanese Grand Prix",
     "path": "documents/2026/japanese-grand-prix/competition-notes-circuit-map-pit-lane-drawing-emergency-exits-map-battery-containment-area-and-red-zone.pdf",
@@ -67501,6 +67508,13 @@
     "path": "documents/2026/japanese-grand-prix/final-qualifying-classification.pdf",
     "source": "decision",
     "title": "Final Qualifying Classification",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_final_race_classification.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/final-race-classification.pdf",
+    "source": "decision",
+    "title": "Final Race Classification",
     "year": 2026
   },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_final_starting_grid.pdf": {
@@ -67587,6 +67601,13 @@
     "title": "Infringement - Qualifying Deleted Lap Times",
     "year": 2026
   },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_infringement_-_race_deleted_lap_times.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/infringement-race-deleted-lap-times.pdf",
+    "source": "decision",
+    "title": "Infringement - Race Deleted Lap Times",
+    "year": 2026
+  },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_new_pu_elements_for_this_competition.pdf": {
     "event": "Japanese Grand Prix",
     "path": "documents/2026/japanese-grand-prix/new-pu-elements-for-this-competition.pdf",
@@ -67664,6 +67685,13 @@
     "title": "Provisional Qualifying Classification",
     "year": 2026
   },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_provisional_race_classification.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/provisional-race-classification.pdf",
+    "source": "decision",
+    "title": "Provisional Race Classification",
+    "year": 2026
+  },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_provisional_starting_grid.pdf": {
     "event": "Japanese Grand Prix",
     "path": "documents/2026/japanese-grand-prix/provisional-starting-grid.pdf",
@@ -67697,6 +67725,13 @@
     "path": "documents/2026/japanese-grand-prix/race-directors-competition-notes-v2.pdf",
     "source": "decision",
     "title": "Race Director's Competition Notes V2",
+    "year": 2026
+  },
+  "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_race_scrutineering.pdf": {
+    "event": "Japanese Grand Prix",
+    "path": "documents/2026/japanese-grand-prix/race-scrutineering.pdf",
+    "source": "decision",
+    "title": "Race Scrutineering",
     "year": 2026
   },
   "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_self_scrutineering.pdf": {
